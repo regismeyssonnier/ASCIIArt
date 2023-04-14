@@ -1,4 +1,6 @@
 import cv2
+import math
+import random
 
 print("WWWWWWWWWWWWWWWWWWWWWWWWWWUUUUUUUUUUUUUUUWWWWWWWWW")
 print("WWWWWWWWU^^^UY^WWWWWWWWWWWUUUUUUUUUWWWUUUUWWWWWWWW")
@@ -81,24 +83,30 @@ class Img:
             print("")
 
 
-    def ascii_high_detail_beta(self):
+    def ascii_rand_beta(self, shade):
 
         imres = cv2.resize(self.img, (self.w,self.h))
         imgr = cv2.cvtColor(imres, cv2.COLOR_RGB2GRAY)
 
+        inter = []
+        for i in range(shade):
+            inter += [chr(random.randint(33, 127))]
+
         for i in range(self.h):
             for j in range(self.w):
-                if imgr[i][j] < 33:
+                if imgr[i][j] < 50:
                     print("`", end='')
-                elif imgr[i][j] < 255:
-                    print(chr(imgr[i][j]), end='')
-                else:
+                elif imgr[i][j] < 100:
+                    print("^", end='')
+                elif imgr[i][j] == 255:
                     print("W", end='')
-
+                else:
+                    get_inter = int(imgr[i][j] / 255 * shade) 
+                    print(inter[get_inter], end='')
 
             print("")
 
 
 img = Img('head2.png')
-img.load(200, 200)
+img.load(200, 100)
 img.ascii_high_contrast()
