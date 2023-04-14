@@ -1,6 +1,6 @@
 # ASCIIArt
 ASCII Art
-
+(Ctrl+Mouse scroll down or up for better details in console)
 
 ![asciiart](https://user-images.githubusercontent.com/67794100/232141881-c0591c9c-59f6-44e1-9898-8ecbbd08537e.jpg)
 
